@@ -14,7 +14,7 @@ class PlacesController < ApplicationController
 	end
 
 	def create
-        Place.create(place_params)
+        current_user.places.create(place_params)
         redirect_to root_path
     end
 
@@ -34,7 +34,8 @@ class PlacesController < ApplicationController
   		@place = Place.find(params[:id])
   		if @place.user != current_user
   			return render plain: 'Not Allowed', status: :forbidden
-  		end	
+  		end
+  			
   		@place.update_attributes(place_params)
   		redirect_to root_path
 	end
@@ -48,7 +49,7 @@ class PlacesController < ApplicationController
 	private
 
 	def place_params
-		params.require(:place).permit(:name, :description, :address)
-	end	
+    	params.require(:place).permit(:name, :description, :address)
+  	end
 
 end
