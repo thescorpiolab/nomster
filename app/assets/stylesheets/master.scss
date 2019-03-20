@@ -32,3 +32,10 @@ body {
   color: #E3E85A;
   font-family: 'ralewaylight', sans-serif;
 }
+
+.invalid-feedback {
+  color: #ff3333;
+  background-color: #FFEEEE;
+  board-radius: 3px;
+  padding: 2px 8px 2px 8px;
+}
