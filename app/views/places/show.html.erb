@@ -1,4 +1,5 @@
 <div class="booyah-box col-10 offset-1">
+  <br />
   <h1><%= @place.name %></h1>
   <i><%= @place.address %></i>
   <br/><br/>
@@ -32,22 +33,25 @@
  <% end %>
 
  <br />   
-
-  <div class="float-right">
+  <div class="clear float-right">
+  	<br />
   	<% if current_user && current_user == @place.user %>
   		<%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
   		<%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger' %>
-  	<% end %>	
-  	
+  	<br />	
+  	<% end %>
+  	<br />
   </div>	
 </div>
 
-<div class="clear"></div>
-<%= simple_form_for @comment, url: '#' do |f| %>
+<div class="clear booyah-box col-10 offset-1">
+<%= simple_form_for @comment, url: 'place_comments_path' do |f| %>
+  <br />
   <%= f.input :message %>
   <%= f.input :rating %>
   <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
 <% end %>
-
+<br />
+</div>
 
 
