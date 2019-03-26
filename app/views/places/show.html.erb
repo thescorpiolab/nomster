@@ -105,9 +105,9 @@
 <div class="clear"></div>
 
 <div class="clear booyah-box col-10 offset-1">
-<%= simple_form_for @photo, url: place_pictures_path(@place) do |f| %>
+<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
   <%= f.input :caption %>
-  <%= f.input :picture %>
+  <%= f.input :photo %>
   <%= f.submit "Upload a picture", class: 'btn btn-primary' %>
 <% end %>
 <br />
